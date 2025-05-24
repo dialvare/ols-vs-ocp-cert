@@ -3,6 +3,7 @@
 Large Language Models (LLMs) have made remarkable strides in recent years, and their integration as AI assistants in technical environments is quickly becoming part of everyday workflows. These tools are now being used to handle a growing range of complex tasks - so it’s only natural to wonder how far they can really go. https://www.redhat.com/en/technologies/cloud-computing/openshift/lightspeed[Red Hat OpenShift Lightspeed] is no exception. This AI assistant built into OpenShift, was meant to simplify tasks, accelerate workflows, and help users become more productive within OpenShift clusters. 
 
 But what if we took it a step further? What if we treated it as a potential candidate for the https://www.redhat.com/en/services/training/red-hat-certified-openshift-administrator-exam[Red Hat Certified OpenShift Administrator] exam? This certification validates the ability to:
+
 * Troubleshoot OpenShift clusters and applications.
 * Configure Authentication and Authorization within the cluster. 
 * Ensure application security using Secrets and Security Context Constraints (SCCs).
