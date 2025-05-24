@@ -45,7 +45,24 @@ In this section, we will compile all the questions that have been asked to Light
 
 We’ll begin the first exercise by opening a blank chat session in OpenShift LightSpeed, without any prior context. We’ll paste the question and the table directly into the message box, which means the table’s structure will be lost. Still, we want to see whether OLS is able to correctly interpret the rows and columns, and whether the response is accurate.
 
-![Question 1](A1.png)
+![Question 1](https://github.com/dialvare/ols-vs-ocp-cert/raw/main/images/A1.1.png)
+
+The response is perfect! Lightspeed was able to fully understand the question and correctly interpret the table format. Once the commands were executed, the groups and users were created and assigned properly. We’re definitely going to give this first question a **Correct** 🟢 mark.
+
+**Question 2: Ensure that only users from the following groups can create projects. Because this exercise requires steps that restart the Kubernetes API server, this configuration must persist across API server restarts.**
+
+| **Group**           |
+|---------------------|
+| **platform**        |
+| **presenters**      |
+| **workshop-support**|
+
+For this second question, since it's directly related to the first one, we’ll continue using the same chat session to provide more context and ensure a better response. This time, the question is not about performing a specific action—like creating users in the previous case—but rather about stating what we want to achieve, leaving it up to Lightspeed to infer the necessary steps to accomplish it.
+
+![Question 2.1](https://github.com/dialvare/ols-vs-ocp-cert/raw/main/images/A1.2-1.png)
+
+![Question 2.2](https://github.com/dialvare/ols-vs-ocp-cert/raw/main/images/A1.2-2.png)
+
 
 
 
