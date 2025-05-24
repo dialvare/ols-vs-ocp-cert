@@ -63,6 +63,30 @@ For this second question, since it's directly related to the first one, we’ll 
 
 ![Question 2.2](https://github.com/dialvare/ols-vs-ocp-cert/raw/main/images/A1.2-2.png)
 
+Once again, a perfect response. The answer begins by outlining the steps to remove project-creation permissions from all users. Then, that role is granted only to the groups listed in the table. Finally, the ClusterRoleBinding is patched to make the changes permanent.
+For all these reasons, we’re assigning this answer another **Correct** 🟢 mark.
+
+**Question 3: The workshop-support group requires the following roles in the cluster:**
+* **The admin role to administer projects.**
+* **A custom role that is provided in the groups-role.yaml file. You must create this custom role to enable support members to create workshop groups and to add workshop attendees.**
+
+As we’re still working with the topic of groups and roles, we’ll continue using the same chat session. In this case, the question format is different: it's presented as two separate bullet points. The second question requires us to attach the *[groups-role.yaml](https://github.com/dialvare/ols-vs-ocp-cert/blob/main/resources/groups-role.yaml)* file to the query so that OpenShift Lightspeed can read it and apply the necessary modifications.
+
+![Question 3.1](https://github.com/dialvare/ols-vs-ocp-cert/raw/main/images/A1.3-1.png)
+
+![Question 3.2](https://github.com/dialvare/ols-vs-ocp-cert/raw/main/images/A1.3-2.png)
+
+OLS suggests creating a new file called manage-groups.yaml, even though we had already attached a file with the same content but a different name. While the procedure works, it could have simply suggested applying the attached file instead of creating a new one with identical content. This seems to be because OLS does not analyze the name of the file attached to the query—only its content. Even though additional steps are being added, the process is correct and successfully answers the question, so we can assign it a **Correct** 🟢 mark.
+
+**Question 4: The platform group must be able to administer the cluster without restrictions.**
+
+This will be the last question about users, groups, and roles, so we’ll continue using the same chat session to ensure OLS has the full context from the previous three questions.
+
+![Question 4](https://github.com/dialvare/ols-vs-ocp-cert/raw/main/images/A1.4.png)
+
+This was a fairly simple question, so OLS had no trouble providing a correct answer. With that single command, the necessary role to manage the cluster is assigned. That’s four **Correct** 🟢 answers in a row!
+
+
 
 
 
