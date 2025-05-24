@@ -86,8 +86,56 @@ This will be the last question about users, groups, and roles, so we’ll contin
 
 This was a fairly simple question, so OLS had no trouble providing a correct answer. With that single command, the necessary role to manage the cluster is assigned. That’s four **Correct** 🟢 answers in a row!
 
+**Question 5: All the resources that the cluster creates with a new workshop project must use workshop as the name for grading purposes. Each workshop must enforce the following maximum constraints:**
+* **The project uses up to 2 CPUs.**
+* **The project uses up to 1 Gi of RAM.**
+* **The project requests up to 1.5 CPUs.**
+* **The project requests up to 750 Mi of RAM.**
 
+Now we are starting a new topic, so it’s a good moment to clear the chat and start a new one. For this exercise our environment has been provisioned with a *[quota.yaml](https://github.com/dialvare/ols-vs-ocp-cert/blob/main/resources/quota.yaml)* template to be completed by the user to match the requirements, so we will need to attach it to the query too.
 
+![Question 5.1](https://github.com/dialvare/ols-vs-ocp-cert/raw/main/images/A1.5-1.png)
 
+![Question 5.2](https://github.com/dialvare/ols-vs-ocp-cert/raw/main/images/A1.5-2.png)
 
+Although the full YAML file isn’t visible in the screenshot, it has been correctly modified to meet the memory and CPU requirements. Additionally, Lightspeed provides a brief explanation for each of the completed fields, making it easier for the user to understand.
+However, as we saw earlier, when applying the resource, it assumed a different file name (*workshop-resourcequota.yaml*) instead of the one actually provided in the attachment (*quota.yaml*). In this case, if we were to simply follow the suggested steps, we wouldn’t be able to create the resource.
+That said, the steps themselves are technically correct, so the fair assessment here would be to mark it as **Partially Correct** 🟡.
+
+**Question 6: Each workshop must enforce constraints to prevent an attendee's workload from consuming all the allocated resources for the workshop:**
+* **A workload uses up to 750m CPUs.**
+* **A workload uses up to 750 Mi.**
+
+This question is similar to the previous one, but this time using Limit Ranges. Since we’re still working with project constraints, we’ll continue using the same chat tab. As we did before, we’re going to attach the [limitrange.yaml](https://github.com/dialvare/ols-vs-ocp-cert/blob/main/resources/limitrange.yaml) file to our question so that OLS can modify it for us.
+
+![Question 6.1](https://github.com/dialvare/ols-vs-ocp-cert/raw/main/images/A1.6-1.png)
+
+![Question 6.2](https://github.com/dialvare/ols-vs-ocp-cert/raw/main/images/A1.6-2.png)
+
+We’re in the same situation as the previous question. The steps are correct. The file is modified to meet the requirements, but when it’s applied, the original name of the attached file is not used. Given all that, we’re going to give it another **Partially Correct** 🟡 mark.
+
+**Question 7: Each workshop must have a resource specification for workloads:**
+* **A default limit of 500m CPUs.**
+* **A default limit of 500 Mi of RAM.**
+* **A default request of 0.1 CPUs.**
+* **A default request of 250 Mi of RAM.**
+
+For this question, the requirements above need to be included in the limitrange.yaml file that we attached earlier. Let’s test if, keeping the same chat session, OLS is able to understand that these requirements need to be added to the file provided in a previous query. Also it will be interesting to see if the response will return only the limitations indicated above or if the model is able to concatenate those in the output file provided in the previous question.
+
+![Question 7.1](https://github.com/dialvare/ols-vs-ocp-cert/raw/main/images/A1.7-1.png)
+
+![Question 7.2](https://github.com/dialvare/ols-vs-ocp-cert/raw/main/images/A1.7-2.png)
+
+The response we received is somewhat what we expected based on the results from the previous questions. Lightspeed understands the requirements well and modifies the file accordingly, but it does not retain the original file name. It’s surprising—in a negative sense—that it hasn’t managed to consolidate all the requirements from this and the previous question into a single file. However, the response is technically correct, although not enough to fully address this question, so we’ll assign it **Partially Correct** 🟡 again.
+
+**Question 8: Each workshop project must have this additional default configuration:**
+* **A local binding for the presenter user to the admin cluster role with the workshop name.**
+* **The workshop=project_name label to help to identify the workshop workload.**
+* **Each workshop must accept traffic only from within the same workshop by using the label workshop=project_name, or traffic coming from the ingress controller by using the label policy-group.network.openshift.io/ingress: "".**
+
+New topic: Networking. Therefore, a new OpenShift LightSpeed chat will be started. This is probably the most complicated question we’ve asked so far in this blog. It covers several different topics and requires a complex configuration. To address it, a network policy is required. The environment includes a sample *[networkpolicy.yaml](https://github.com/dialvare/ols-vs-ocp-cert/blob/main/resources/networkpolicy.yaml)* template, which we will attach to the question.
+
+![Question 8.1](https://github.com/dialvare/ols-vs-ocp-cert/raw/main/images/A1.8-1.png)
+
+![Question 8.2](https://github.com/dialvare/ols-vs-ocp-cert/raw/main/images/A1.8-2.png)
 
