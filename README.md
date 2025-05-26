@@ -1,2 +1,2 @@
-# Can AI Master OpenShift? LightSpeed Takes the Red Hat OCP Certification
+# Can AI Master OpenShift? Lightspeed Takes the Red Hat OCP Certification
 
